@@ -55,6 +55,44 @@ Your finished project must include all of the following requirements (further in
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+
+In the session based authentication, the server will create a session for the user after the user logs in. The session id is then stored on a cookie on the user’s browser. While the user stays logged in,
+the cookie would be sent along with every subsequent request. The server can then compare the session id stored on the cookie against the session information stored in the memory to verify user’s identity 
+and sends response with the corresponding state and for JSON Web Tokens authentication to authenticate a user, a client application must send a JSON Web Token (JWT) in the authorization header of the HTTP 
+request to your backend API. API Gateway validates the token on behalf of your API, so you don't have to add any code in your API to process the authentication.
+
+
 2. What does `bcryptjs` do to help us store passwords in a secure manner?
+
+
+Using bcrypt is a secured way to store passwords in my database regardless of whatever language my app's backend is built in — PHP, Ruby, Python, Node. js, etc. Salted hashing 
+Generating random bytes (the salt) and combining it with the password before hashing creates unique hashes across each user's password.
+
+
+
 3. How are unit tests different from integration and end-to-end testing?
+
+
+        Integration testing
+- Integration testing starts at the very early stages of development. Bugs are caught earlier, rather than later, in the cycle.
+- It's easy to integrate with daily builds and easy to test in the development environment.
+- Tests run faster compared to end-to-end tests.
+- Aims to test how external systems work with internal modules, one by one.
+- Used to test a single process from third-party software that will be used in conjunction with your software.
+
+        End-to-end testing
+- End-to-end testing is done when the product is almost ready for release.  
+- It may be impossible to perform until the product is nearing completion.
+- Tests run slower compared to integration testing.
+- Aims to test the user experience from start to finish.
+- Can be used for either a single process being executed from start to finish or various different processes involving different applications.
+
+
+
 4. How does _Test Driven Development_ change the way we write applications and tests?
+
+
+Test driven development (TDD) is an iterative development process. Developers write a test before they write just enough production code to fulfill that test and the subsequent refactoring. 
+Developers use the specifications and first write test describing how the code should behave. It is a rapid cycle of testing, coding, and refactoring.
+
+
